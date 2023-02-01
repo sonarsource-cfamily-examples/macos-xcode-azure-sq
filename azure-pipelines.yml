@@ -1,6 +1,6 @@
 jobs:
 - job: BuildMacOSWithSonarQube
-  displayName: Build for MacOS\XCode With SonarQube
+  displayName: Build for macOS\XCode With SonarQube
   pool:
     vmImage: 'macos-latest'
   variables:
