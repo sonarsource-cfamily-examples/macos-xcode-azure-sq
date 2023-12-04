@@ -6,7 +6,7 @@ jobs:
   variables:
     SONARQUBE_HOST_URL: https://next.sonarqube.com/sonarqube
   steps:
-  - task: SonarQubePrepare@4
+  - task: SonarQubePrepare@5
     inputs:
       SonarQube: 'SonarQube' # Name of the SonarQube service endpoint you created
       scannerMode: 'CLI'
@@ -22,4 +22,6 @@ jobs:
       build-wrapper-macosx-x86 --out-dir build_wrapper_output_directory xcodebuild
     workingDirectory: .
     displayName: Build in build-wrapper
-  - task: SonarQubeAnalyze@4
+  - task: SonarQubeAnalyze@5
+    inputs:
+      jdkversion: 'JAVA_HOME_17_X64'
